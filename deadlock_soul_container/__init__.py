@@ -1122,7 +1122,7 @@ class DLSC_PT_panel(bpy.types.Panel):
         col.label(text=(tr("Selected: {name}", name=mesh.name) if mesh else tr("Nothing selected")),
                   icon="OBJECT_DATA" if mesh else "BLANK1")
         col.operator(DLSC_OT_make.bl_idname, text=tr("Make it a soul container"), icon="SHADERFX")
-        col.label(text=tr("Summons joint1, binds it, matches the size and centres it."))
+        col.label(text=tr("Matches the size and centres it."))
         # where am I? The made copy, if there is one for what is selected
         made = mesh if (mesh and any(c.name == GEN_COLLECTION for c in mesh.users_collection)) else None
         if made is None and mesh is not None:

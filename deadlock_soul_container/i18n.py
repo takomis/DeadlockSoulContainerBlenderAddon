@@ -19,8 +19,7 @@ JA = {
     "2. Check it": "② チェック",
     "3. Build the mod": "③ mod をビルド",
     "Make it a soul container": "ソウルコンテナにする",
-    "Summons joint1, binds it, matches the size and centres it.":
-        "アーマチュアとボーン joint1 を追加し、頂点ウェイト 100% で割り当て、サイズと原点を合わせる。",
+    "Matches the size and centres it.": "サイズと原点を合わせる。",
     "Selected: {name}": "選択中: {name}",
     "Nothing selected": "オブジェクト未選択",
     "Made: {name}": "作成済み: {name}",
