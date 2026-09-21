@@ -526,7 +526,10 @@ class DLSC_Props(bpy.types.PropertyGroup):
                                          description="Written to content/citadel_addons/<this name>/. ASCII only")
     mod_name: bpy.props.StringProperty(name="Mod name", default="SoulContainer_Mine",
                                        description="The name of the vpk that comes out")
-    out_dir: bpy.props.StringProperty(name="vpk goes to", subtype="DIR_PATH", default=r"C:\Users\mousi\デスクトップ")
+    # 既定は空。空のときはホームフォルダに出す（パックのところで見ている）
+    out_dir: bpy.props.StringProperty(
+        name="vpk goes to", subtype="DIR_PATH", default="",
+        description="Where the finished vpk is written. Empty means your home folder")
     include_fix: bpy.props.BoolProperty(name="Include the rotation fix particles", default=True,
                                         description="Put the three particles that make the model follow the character "
                                                     "(proven on cinna) into the vpk")
