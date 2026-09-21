@@ -1,0 +1,14 @@
+schema_version = "1.0.0"
+
+id = "deadlock_soul_container"
+version = "0.16.1"
+name = "Deadlock Soul Container"
+tagline = "Turn any mesh into a Deadlock soul container mod, in one button"
+maintainer = "このちゃん & ニコ"
+type = "add-on"
+blender_version_min = "4.2.0"
+license = ["SPDX:MIT"]
+tags = ["Import-Export", "Object"]
+
+[permissions]
+files = "Reading reference models and writing the mod files"
