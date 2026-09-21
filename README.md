@@ -4,18 +4,32 @@
 
 The English version is in [README.en.md](README.en.md).
 
+[必要なもの](#必要なもの) ・
+[インストール](#インストール) ・
+[使い方](#使い方) ・
+[Mod Manager](#deadlock-mod-manager-での操作) ・
+[うまくいかないときは](#うまくいかないときは) ・
+[できないこと](#このアドオンができないこと) ・
+[仕組み](#仕組みai-に渡す用内部で行っている処理) ・
+[サポート](#サポートについて)
+
 ![ゲーム内のソウルコンテナ mod](images/hero.png)
 
 ---
 
 ## 必要なもの
 
-| 必要なもの | 補足 |
-|---|---|
-| Blender 4.2 以降 | 拡張機能（Extensions）に対応したバージョン |
-| Reduced CSDK 12 | Deadlock のコンパイラ一式。[deadlockmodding.pages.dev](https://deadlockmodding.pages.dev/modding-tools/csdk-12) のページ内、Google ドライブからダウンロードできます |
-| Steam（Deadlock インストール済み） | CSDK が参照します。Steam は起動してログインした状態にしてください |
-| Deadlock Mod Manager | 作成した mod をゲームに入れるために使います（[deadlockmods.app](https://deadlockmods.app/)） |
+- **Blender 4.2 以降**
+  拡張機能（Extensions）に対応したバージョン
+
+- **Reduced CSDK 12**
+  Deadlock のコンパイラ一式。[deadlockmodding.pages.dev](https://deadlockmodding.pages.dev/modding-tools/csdk-12) のページ内、Google ドライブからダウンロードできます
+
+- **Steam（Deadlock インストール済み）**
+  CSDK が参照します。Steam は起動してログインした状態にしてください
+
+- **Deadlock Mod Manager**
+  作成した mod をゲームに入れるために使います（[deadlockmods.app](https://deadlockmods.app/)）
 
 ---
 
@@ -129,6 +143,9 @@ Steam が起動しているかを確認してください。それでも解決�
 **この節をまるごと AI に貼り付けると、不具合の相談や改造の相談がしやすくなります。**
 自分で中を読むときの地図としても使えます。
 
+<details>
+<summary><b>開いて読む</b></summary>
+
 ### ［ソウルコンテナにする］
 
 1. **選択したメッシュを複製します。** メッシュデータもマテリアルも複製側の持ち物にするため、
@@ -188,6 +205,8 @@ Steam が起動しているかを確認してください。それでも解決�
 設定で外すこともできます。ヨー（水平方向）のみの補正のため、しゃがみ移動では違和感が残ります。
 
 Valve のモデルやテクスチャは**同梱していません**。サイズガイドの球は、アドオンが実行時に生成しています。
+
+</details>
 
 ---
 
