@@ -1,206 +1,205 @@
 # Deadlock Soul Container Blender Addon
 
-Turns a 3D model into a **Deadlock soul container mod**, from inside Blender.
+3D モデルを、**Deadlock のソウルコンテナ mod にする** Blender アドオンです。
 
-日本語の説明は [README.ja.md](README.ja.md) にあります。
+The English version is in [README.en.md](README.en.md).
 
-![A soul container mod in game](images/hero.png)
+![ゲーム内のソウルコンテナ mod](images/hero.png)
 
 ---
 
-## What you need
+## 必要なもの
 
-| Requirement | Notes |
+| 必要なもの | 補足 |
 |---|---|
-| Blender 4.2 or newer | A version with the Extensions system |
-| Reduced CSDK 12 | Deadlock's compiler tools. Download it from the Google Drive link on [deadlockmodding.pages.dev](https://deadlockmodding.pages.dev/modding-tools/csdk-12) |
-| Steam (with Deadlock installed) | The CSDK needs it. Keep Steam running and signed in |
-| Deadlock Mod Manager | To put the finished mod into the game ([deadlockmods.app](https://deadlockmods.app/)) |
+| Blender 4.2 以降 | 拡張機能（Extensions）に対応したバージョン |
+| Reduced CSDK 12 | Deadlock のコンパイラ一式。[deadlockmodding.pages.dev](https://deadlockmodding.pages.dev/modding-tools/csdk-12) のページ内、Google ドライブからダウンロードできます |
+| Steam（Deadlock インストール済み） | CSDK が参照します。Steam は起動してログインした状態にしてください |
+| Deadlock Mod Manager | 作成した mod をゲームに入れるために使います（[deadlockmods.app](https://deadlockmods.app/)） |
 
 ---
 
-## Installing
+## インストール
 
-1. Download `deadlock_soul_container-x.y.z.zip` from [Releases](../../releases)
-2. In Blender, open **Edit → Preferences → Add-ons**, then choose **▼ → Install from Disk** at the top right
-3. In the file browser, **pick the zip from step 1 as it is** (do not unpack it)
-4. Tick the box next to "Deadlock Soul Container" in the list
+1. [Releases](../../releases) から `deadlock_soul_container-x.y.z.zip` をダウンロードします
+2. Blender の **編集 → プリファレンス → アドオン** を開き、右上の **▼ → Install from Disk** を選びます
+3. ファイル選択の画面で、**手順 1 でダウンロードした zip をそのまま指定します**（展開しないでください）
+4. 一覧に現れた「Deadlock Soul Container」にチェックを入れます
 
-### One time only: point the add-on at the CSDK
+### 最初に一度だけ：CSDK の場所を指定する
 
-The add-on needs to know where you put Reduced CSDK 12. Without it, nothing can be built.
+アドオンに Reduced CSDK 12 を置いた場所を教えます。ここを設定しないと mod はビルドできません。
 
-1. Open **Edit → Preferences → Add-ons** (if you have just installed it, you are already there)
-2. Expand the **▸** on the left of the "**Deadlock Soul Container**" row
-3. A field called **CSDK 12 folder** appears. Press the folder icon on its right
-4. In the file browser, **select the `Reduced_CSDK_12` folder** and press "Accept"
+1. **編集 → プリファレンス → アドオン** を開きます（インストール直後であれば、その画面のままで構いません）
+2. 一覧の「**Deadlock Soul Container**」の行、左にある **▸** を開きます
+3. **CSDK 12 のフォルダ** という欄が現れます。右にあるフォルダのアイコンを押します
+4. ファイル選択の画面で `Reduced_CSDK_12` の**フォルダを選び**、「Accept」を押します
 
 ```
-e.g. C:\Users\<you>\Downloads\Reduced_CSDK_12
-      ├─ game\        ← the folder where you can see these two
-      └─ content\
+例: C:\Users\<ユーザー名>\Downloads\Reduced_CSDK_12
+     ├─ game\        ← この 2 つが見えているフォルダが正解です
+     └─ content\
 ```
 
-> Pick the folder that has `game\` and `content\` **directly inside it**.
-> Depending on the download, the name is sometimes doubled, as in
-> `Reduced_CSDK_12\Reduced_CSDK_12\`. In that case the **inner** one is the right choice.
+> 中に `game\` と `content\` が**見えているフォルダ**を指定してください。
+> ダウンロードしたものによっては `Reduced_CSDK_12\Reduced_CSDK_12\` のように
+> 同じ名前が二重になっている場合があります。そのときは**内側**が正解です。
 
-The path is stored in your Blender preferences, so it is remembered across .blend files.
-While it is unset, the "3. Build the mod" box shows **"The CSDK 12 folder is not set yet"**.
-
----
-
-## Using it
-
-Press **N** in the 3D view and open the "**Soul Container**" tab on the right.
-
-### 1. Pick a mesh and press
-
-Load your model into Blender, select **one mesh**, and press **[Make it a soul container]**.
-
-Everything the add-on makes goes into the `SoulContainer` collection.
-**Pressing it again does not start over** — it keeps working on the copy you already have.
-To start over, delete what it made and press again.
-
-### Material (the look)
-
-Open "Material (vmat)" in the panel to set the **Base Color** and the other images.
-If the mesh has no material, one is created for you. Several materials are fine as well.
-
-The numeric settings (roughness, metallic, self-illumination, saturation) are here too.
-
-### 2. Check it
-
-Press **[Check]** to see whether the mesh meets the requirements.
-
-- ✓ … fine
-- ⓘ … a note (you can carry on)
-- ✗ … a problem (it cannot be built as it is)
-
-### 3. Build the mod
-
-Set the **mod name** and the **output folder**, then press **[Build the mod]**.
-Export, compile and packing into a vpk all run in one go, and `<mod name>.vpk` appears in the output folder.
-
-That is the mod file finished. All that is left is getting it into the game —
-carry on to "**Using Deadlock Mod Manager**" below.
+この設定は Blender の設定として保存されるため、.blend ファイルを変えても保持されます。
+未設定の場合は、パネルの「③ mod をビルド」の欄に **「CSDK 12 のフォルダが未設定」** と表示されます。
 
 ---
 
-## Using Deadlock Mod Manager
+## 使い方
 
-Install Deadlock Mod Manager, then upload the vpk you built from
-**Mods Library → Add local mod**.
+3D ビューで **N** キーを押し、右に現れるタブの「**Soul Container**」を開きます。
 
-![Choosing the vpk in Add local mod](images/modmanager-add-local-mod.png)
+### ① メッシュオブジェクトを選択して実行
 
-Go back one screen and enable the mod you just added.
+モデルを Blender に読み込み、**メッシュを 1 つだけ**選択して、**［ソウルコンテナにする］**を押します。
 
-![Enabling it in the list](images/modmanager-enable.png)
+作成されたオブジェクトは、すべて `SoulContainer` コレクションに入ります。
+**もう一度押しても作り直しません**（作業中の複製をそのまま使います）。
+作り直したいときは、生成物を削除してから、もう一度押してください。
 
----
+### マテリアル（見た目）
 
-## When it does not work
+パネルの「マテリアル（vmat）」を開くと、**ベースカラー**などの画像を指定できます。
+マテリアルが無い場合は自動で作成されます。複数のマテリアルにも対応しています。
 
-**"over the compiler's limit of 524,288"**
-Too many vertices to build. Bring the count down, for example with a Decimate modifier
-(you do not have to apply it).
+数値のつまみ（ラフネス・メタリック・自己発光・彩度）も、ここにあります。
 
-**"CSDK 12 not found"**
-Check the folder in the preferences. The right folder is the one that contains
-`game\bin_cs2\win64\resourcecompiler.exe`.
+### ② チェック
 
-**The compiler returns an error**
-Check that Steam is running. If that does not help, the compiler's raw output is in
-`compile.log`, next to the exported files.
+**［チェック］**を押すと、条件を満たしているかが一覧で表示されます。
 
----
+- ✓ … 問題ありません
+- ⓘ … 注意（このまま進められます）
+- ✗ … 警告（このままではビルドできません）
 
-## What this add-on does not do
+### ③ mod をビルド
 
-- **Soul containers only.** It cannot replace hero models (that needs a different pipeline)
-- It handles **one mesh** at a time (join your meshes in Blender first if you need several)
+**mod 名**と**出力先**を決めて、**［mod をビルド］**を押します。
+エクスポート → コンパイル → vpk へのパックが一度に実行され、出力先に `<mod 名>.vpk` が作成されます。
 
----
-
-## How it works
-
-What runs when you press a button, and why. Use it as a map when you are chasing a problem,
-changing the add-on yourself, or feeding it to an AI.
-
-### [Make it a soul container]
-
-1. **Copies the selected mesh.** The copy owns its own mesh data and its own materials, so
-   nothing that follows (resizing, renaming materials for the export) reaches your original model
-2. Puts a wireframe size guide (radius 6.325 units), an armature with the single bone `joint1`
-   and the collision sphere into the `SoulContainer` collection
-3. Clears the parent and applies location, rotation and scale to the mesh
-4. **Scales it to radius 6.325 units** — the size of the original soul container
-5. Moves the centre of the bounding box to the origin (that is where the character's hand is)
-6. Adds an armature modifier and weighs every vertex to `joint1` at 100%
-
-The original soul container is **1 unit = 1 inch, radius about 6.3 units (about 32cm across),
-one bone called joint1, every vertex weighted to it at 100%, and a collision sphere of radius 7**.
-Those six steps are what it takes to match that.
-
-### [Build the mod]
-
-1. Clears the files written by the previous build
-   (file names come from material names, so a rename would leave old files behind and they
-   would end up in the vpk)
-2. Exports the mesh as FBX with **`global_scale=0.0254`** — Blender writes 1 BU as 100cm and
-   Source 2 reads FBX centimetres as inches, so without it 1 BU becomes 39.37 units
-   (a ball the size of the room)
-3. Writes one `.vmat` per material and one line per material into the `remaps` table of the
-   `.vmdl`. The template is a `pbr.vfx` NPR setup; only the values are swapped in
-4. Compiles with `game\bin_cs2\win64\resourcecompiler.exe`
-5. Collects the resulting `*_c` files into a vpk (along with the three rotation-fix particles)
-
-> ⚠ Only the compiler in **`game\bin_cs2\win64\`** works. The ones in `bin\`, `bin_tools\`
-> and `bin_server\` stop with `Schema mismatch: resourcecompiler.dll vs particles.dll`.
-
-### Traps already hit
-
-- **A `.001` suffix on a material name is read as a file extension and the material falls off**
-  (you get a red wireframe ball). Material names are swapped for ASCII ones during the export
-  only. Blender keeps names unique by itself, so anything holding the wanted name is parked
-  aside first, the names go through temporary ones, and the result is verified before exporting
-- **Textures whose sides are not powers of two fail mip generation for normal/roughness**
-  (`Cannot filter non-power-of-two texture 1200x1024x1!`). The whole vmat then fails to compile,
-  and the warning you see says the mesh is "referencing missing material" — **two steps away
-  from the cause**. Textures are resized to the nearest power of two on export
-  (the images inside Blender are left untouched)
-- **The vertex ceiling is 524,288** (a skinned mesh uses the GPU animated vertex cache).
-  The check counts the vertices that will be *exported*, so a Decimate modifier counts even
-  when it has not been applied
-- **`obj.bound_box` and `matrix_world` are stale until the dependency graph catches up.**
-  `view_layer.update()` is called before measuring, and sizes are measured from the vertices
-
-### The rotation-fix particles
-
-A soul container is **drawn by particles, not by the model**
-(`particles/generic/holding_gold_neutral_model.vpcf`).
-Swapping the model alone therefore does not make it follow the character's facing — the
-original particle locks rotation through `m_bLockRot` on `C_OP_PositionLock`.
-
-Three fixed particles are bundled to solve this; the approach is borrowed from the author of
-[mod 657811](https://gamebanana.com/mods/657811). You can leave them out in the settings.
-It corrects yaw only, so crouch-walking still looks slightly off.
-
-No Valve models or textures are bundled. The size guide sphere is generated at runtime.
+ここまでで mod のファイルは完成です。
+あとはゲームに入れるだけです。次の「**Deadlock Mod Manager での操作**」へ進んでください。
 
 ---
 
-## Support
+## Deadlock Mod Manager での操作
 
-This is a hobby project. It comes **with no warranty and no support**, and there is no place
-to send questions (Issues are closed).
+Deadlock Mod Manager をインストールしたら、**Mods Library → Add local mod** から、
+作成した vpk をアップロードします。
 
-It is MIT licensed, so **you are free to change it and share it**. If something is quicker to
-fix yourself, please go ahead.
+![Add local mod で vpk を選ぶ](images/modmanager-add-local-mod.png)
+
+ひとつ前の画面に戻り、追加した mod を有効化します。
+
+![一覧に戻って有効化する](images/modmanager-enable.png)
 
 ---
 
-## License
+## うまくいかないときは
 
-MIT. See [LICENSE](LICENSE).
+**「コンパイラの上限 524,288 を超えている」と出る**
+頂点数が多すぎるとビルドできません。デシメートモディファイアーなどで減らしてください
+（適用は不要です）。
+
+**「CSDK 12 が見つからない」**
+プリファレンスのフォルダ指定を確認してください。
+`game\bin_cs2\win64\resourcecompiler.exe` が存在するフォルダが正解です。
+
+**コンパイラがエラーを返す**
+Steam が起動しているかを確認してください。それでも解決しない場合は、
+エクスポート先に作成される `compile.log` に、コンパイラの生のログが残っています。
+
+---
+
+## このアドオンができないこと
+
+- **ソウルコンテナのみ対応**です。ヒーローのモデル差し替えには対応していません（別の工程が必要です）
+- メッシュは **1 つ**だけ扱います（複数をまとめたい場合は、Blender 側で結合してから選択してください）
+
+---
+
+## 仕組み（内部で行っている処理）
+
+ボタンを押したときに何が実行され、なぜそうしているのかをまとめます。
+不具合を追うとき、自分で作り変えるとき、AI に読ませるときの地図として使ってください。
+
+### ［ソウルコンテナにする］
+
+1. **選択したメッシュを複製します。** メッシュデータもマテリアルも複製側の持ち物にするため、
+   これ以降の処理（サイズ変更、エクスポート時のマテリアル名の変更）は元のモデルに影響しません
+2. サイズの目安となるワイヤー球（半径 6.325 unit）、ボーン `joint1` 1 本のアーマチュア、
+   当たり判定の球を `SoulContainer` コレクションに配置します
+3. 親をクリアし、位置・回転・スケールをメッシュに適用します
+4. **半径 6.325 unit に合わせます**（本家のソウルコンテナの大きさです）
+5. バウンディングボックスの中心を原点へ移動します（そこがキャラクターの手の位置です）
+6. アーマチュアモディファイアーを追加し、全頂点を `joint1` にウェイト 100% で割り当てます
+
+本家のソウルコンテナは **1 unit = 1 inch、半径 約 6.3 unit（直径 約 32cm）、ボーンは joint1 の 1 本、
+全頂点が joint1 に 100%、当たり判定は半径 7 の球**という形をしています。
+上記の 6 手は、そこへ合わせるための処理です。
+
+### ［mod をビルド］
+
+1. 前回のビルドで出力したファイルを削除します
+   （ファイル名はマテリアル名から作られるため、名前が変わると古いファイルが残り、vpk に混入します）
+2. 選択したメッシュを FBX でエクスポートします。**`global_scale=0.0254`** を指定します
+   ——Blender は 1 BU を 100cm として書き出し、Source 2 は FBX の cm を inch として読むため、
+   指定しないと 1 BU が 39.37 unit になります（部屋いっぱいの大きさになります）
+3. マテリアルごとに `.vmat` を書き出し、`.vmdl` の置き換え表（`remaps`）に 1 行ずつ並べます。
+   雛形は `pbr.vfx` の NPR 設定一式で、値だけを差し替えています
+4. `game\bin_cs2\win64\resourcecompiler.exe` でコンパイルします
+5. 出力された `*_c` を集めて vpk にまとめます（向き修正のパーティクル 3 つも同梱します）
+
+> ⚠ コンパイラは **`game\bin_cs2\win64\` のもの**しか使用できません。
+> `bin\` `bin_tools\` `bin_server\` のものは
+> `Schema mismatch: resourcecompiler.dll vs particles.dll` で停止します。
+
+### 踏んだ罠
+
+- **マテリアル名の `.001` は拡張子として読まれ、マテリアルが外れます**（赤いワイヤーの玉になります）。
+  エクスポートの間だけ半角英数の名前に変更しています。Blender は名前の重複を自動的に避けるため、
+  同名になるものを一時退避 → 仮の名前 → 本来の名前、の順で変更し、
+  狙いどおりの名前になったかを確認してからエクスポートします
+- **テクスチャの辺が 2 の累乗でないと、ノーマル／ラフネスのミップ生成に失敗します**
+  （`Cannot filter non-power-of-two texture 1200x1024x1!`）。vmat ごとコンパイルが失敗し、
+  表示される警告は「メッシュがマテリアルを参照できない」という、**原因から 2 段離れた内容**になります。
+  エクスポート時に近いサイズへリサイズして渡しています（Blender 内の画像は変更しません）
+- **頂点数の上限は 524,288 です**（スキン付きメッシュは GPU の頂点キャッシュを使用するためです）。
+  チェックが数えるのは**エクスポートされる頂点数**のため、
+  デシメートモディファイアーは適用しなくても反映されます
+- **`obj.bound_box` と `matrix_world` は、依存グラフが更新されるまで古い値を返します。**
+  計測の前に `view_layer.update()` を挟み、大きさは頂点から直接測っています
+
+### 向き修正のパーティクル
+
+ソウルコンテナは**モデルではなくパーティクルが描画しています**
+（`particles/generic/holding_gold_neutral_model.vpcf`）。
+そのため、モデルを差し替えただけではキャラクターの向きに追従しません
+（元のパーティクルが `C_OP_PositionLock` の `m_bLockRot` で回転を固定しているためです）。
+
+これを修正したパーティクル 3 つを同梱しています
+（[mod 657811](https://gamebanana.com/mods/657811) の作者の手法をお借りしました）。
+設定で外すこともできます。ヨー（水平方向）のみの補正のため、しゃがみ移動では違和感が残ります。
+
+Valve のモデルやテクスチャは**同梱していません**。サイズガイドの球は、アドオンが実行時に生成しています。
+
+---
+
+## サポートについて
+
+個人が趣味で作ったものです。**無保証・サポートなし**でお使いください。
+問い合わせの窓口は設けていません（Issues も受け付けていません）。
+
+MIT ライセンスなので、**自由に改変・再配布していただけます**。
+手元で直したほうが早い箇所があれば、そのまま直してお使いください。
+
+---
+
+## ライセンス
+
+MIT ライセンスです。詳しくは [LICENSE](LICENSE) をご覧ください。
