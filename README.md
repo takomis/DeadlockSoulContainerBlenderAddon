@@ -1,14 +1,12 @@
 # Deadlock Soul Container Blender Addon
 
 3D モデルを、Deadlock のソウルコンテナ mod にする Blender アドオン。
-メッシュを選んで、ボタン3つ。
 
 **📖 [使い方はこちら](https://takomis.github.io/DeadlockSoulContainerBlenderAddon/)**（説明ページ）
 
 ---
 
 Turns a 3D model into a Deadlock soul container mod, from inside Blender.
-Pick a mesh, press three buttons.
 
 **📖 [Read the guide](https://takomis.github.io/DeadlockSoulContainerBlenderAddon/en.html)**
 
