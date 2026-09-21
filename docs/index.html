@@ -47,6 +47,11 @@
        font-family:"Cascadia Mono",Consolas,monospace}
   pre{background:var(--code); padding:14px 16px; border-radius:10px; overflow-x:auto;
       font-size:.85rem; line-height:1.6; font-family:"Cascadia Mono",Consolas,monospace}
+  table{width:100%; border-collapse:collapse; margin:16px 0; font-size:.95rem}
+  th,td{border-bottom:1px solid var(--line); padding:10px 12px; text-align:left; vertical-align:top}
+  th{color:var(--dim); font-weight:normal; font-size:.85rem; white-space:nowrap}
+  td:first-child{white-space:nowrap; font-weight:bold}
+  @media (max-width:520px){ td:first-child{white-space:normal} }
   .cards{display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:12px; margin:16px 0}
   .card{background:var(--panel); border:1px solid var(--line); border-radius:12px; padding:14px 16px;
         box-shadow:var(--shadow)}
@@ -84,27 +89,22 @@
   <p class="sub"><a href="en.html">English</a> ・ <a href="https://github.com/takomis/DeadlockSoulContainerBlenderAddon">GitHub</a></p>
   <h1>Deadlock Soul Container<br>Blender Addon</h1>
   <p class="lead">3Dモデルを、Deadlock のソウルコンテナ mod にするアドオン。</p>
-  <p class="sub">メッシュを選んで、ボタン3つ。</p>
 </header>
 
 <img class="hero" src="images/hero.png" alt="ゲーム内のソウルコンテナ mod">
 
 <h2><span class="n">01</span>必要なもの</h2>
-<div class="cards">
-  <div class="card"><b>Blender 4.2 以降</b><span>拡張機能に対応した版</span></div>
-  <div class="card"><b>Reduced CSDK 12</b><span>Deadlock のコンパイラ一式。<a href="https://deadlockmodding.pages.dev/modding-tools/csdk-12">配布ページ</a>の Google ドライブから</span></div>
-  <div class="card"><b>Steam</b><span>Deadlock 導入済み。起動してログインしたまま</span></div>
-  <div class="card"><b>Deadlock Mod Manager</b><span>できた mod を入れる（<a href="https://deadlockmods.app/">公式</a>）</span></div>
-</div>
+<table>
+  <tr><td>Blender 4.2 以降</td><td>拡張機能に対応した版</td></tr>
+  <tr><td>Reduced CSDK 12</td><td>Deadlock のコンパイラ一式。<a href="https://deadlockmodding.pages.dev/modding-tools/csdk-12">配布ページ</a>の Google ドライブから</td></tr>
+  <tr><td>Steam</td><td>Deadlock 導入済み。起動してログインしたまま</td></tr>
+  <tr><td>Deadlock Mod Manager</td><td>できた mod を入れる（<a href="https://deadlockmods.app/">公式</a>）</td></tr>
+</table>
 
 <h2><span class="n">02</span>入れる</h2>
-<ol>
-  <li><a href="https://github.com/takomis/DeadlockSoulContainerBlenderAddon/releases">Releases</a> から zip をダウンロード</li>
-  <li>Blender の <b>編集 → プリファレンス → アドオン</b></li>
-  <li>右上の <b>▼ → Install from Disk</b></li>
-  <li>落とした zip をそのまま指定（展開しない）</li>
-  <li>「Deadlock Soul Container」にチェック</li>
-</ol>
+<p><a href="https://github.com/takomis/DeadlockSoulContainerBlenderAddon/releases">Releases</a> の zip を、
+<b>編集 → プリファレンス → アドオン → ▼ → Install from Disk</b> でそのまま指定（展開しない）。
+一覧に出たらチェックを入れる。</p>
 
 <h3>CSDK の場所を教える（最初の1回だけ）</h3>
 <ol>

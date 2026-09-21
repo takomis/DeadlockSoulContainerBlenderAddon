@@ -44,6 +44,11 @@
        font-family:"Cascadia Mono",Consolas,monospace}
   pre{background:var(--code); padding:14px 16px; border-radius:10px; overflow-x:auto;
       font-size:.85rem; line-height:1.6; font-family:"Cascadia Mono",Consolas,monospace}
+  table{width:100%; border-collapse:collapse; margin:16px 0; font-size:.95rem}
+  th,td{border-bottom:1px solid var(--line); padding:10px 12px; text-align:left; vertical-align:top}
+  th{color:var(--dim); font-weight:normal; font-size:.85rem; white-space:nowrap}
+  td:first-child{white-space:nowrap; font-weight:bold}
+  @media (max-width:520px){ td:first-child{white-space:normal} }
   .cards{display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:12px; margin:16px 0}
   .card{background:var(--panel); border:1px solid var(--line); border-radius:12px; padding:14px 16px;
         box-shadow:var(--shadow)}
@@ -81,27 +86,22 @@
   <p class="sub"><a href="index.html">日本語</a> ・ <a href="https://github.com/takomis/DeadlockSoulContainerBlenderAddon">GitHub</a></p>
   <h1>Deadlock Soul Container<br>Blender Addon</h1>
   <p class="lead">Turns a 3D model into a Deadlock soul container mod.</p>
-  <p class="sub">Pick a mesh, press three buttons.</p>
 </header>
 
 <img class="hero" src="images/hero.png" alt="A soul container mod in game">
 
 <h2><span class="n">01</span>What you need</h2>
-<div class="cards">
-  <div class="card"><b>Blender 4.2+</b><span>A version with the Extensions system</span></div>
-  <div class="card"><b>Reduced CSDK 12</b><span>Deadlock's compiler tools, from the Google Drive link on the <a href="https://deadlockmodding.pages.dev/modding-tools/csdk-12">download page</a></span></div>
-  <div class="card"><b>Steam</b><span>With Deadlock installed. Keep it running and signed in</span></div>
-  <div class="card"><b>Deadlock Mod Manager</b><span>To put the mod into the game (<a href="https://deadlockmods.app/">site</a>)</span></div>
-</div>
+<table>
+  <tr><td>Blender 4.2+</td><td>A version with the Extensions system</td></tr>
+  <tr><td>Reduced CSDK 12</td><td>Deadlock's compiler tools, from the Google Drive link on the <a href="https://deadlockmodding.pages.dev/modding-tools/csdk-12">download page</a></td></tr>
+  <tr><td>Steam</td><td>With Deadlock installed. Keep it running and signed in</td></tr>
+  <tr><td>Deadlock Mod Manager</td><td>To put the mod into the game (<a href="https://deadlockmods.app/">site</a>)</td></tr>
+</table>
 
 <h2><span class="n">02</span>Install</h2>
-<ol>
-  <li>Download the zip from <a href="https://github.com/takomis/DeadlockSoulContainerBlenderAddon/releases">Releases</a></li>
-  <li>In Blender: <b>Edit → Preferences → Add-ons</b></li>
-  <li>Top right: <b>▼ → Install from Disk</b></li>
-  <li>Pick the zip as it is (do not unpack it)</li>
-  <li>Tick "Deadlock Soul Container"</li>
-</ol>
+<p>Take the zip from <a href="https://github.com/takomis/DeadlockSoulContainerBlenderAddon/releases">Releases</a> and
+give it to <b>Edit → Preferences → Add-ons → ▼ → Install from Disk</b> as it is (do not unpack it).
+Tick it once it shows up in the list.</p>
 
 <h3>Point it at the CSDK (once)</h3>
 <ol>
