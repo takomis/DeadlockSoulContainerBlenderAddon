@@ -123,10 +123,11 @@ Check that Steam is running. If that does not help, the compiler's raw output is
 
 ---
 
-## How it works
+## How it works (paste this into an AI)
 
-What runs when you press a button, and why. Use it as a map when you are chasing a problem,
-changing the add-on yourself, or feeding it to an AI.
+What runs when you press a button, and why.
+**Paste this whole section into an AI** when you want help with a problem or a change —
+it is written to be enough context on its own. It also works as a map for reading the code.
 
 ### [Make it a soul container]
 
