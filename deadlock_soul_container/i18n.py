@@ -23,8 +23,6 @@ JA = {
     "Selected: {name}": "選択中: {name}",
     "Nothing selected": "オブジェクト未選択",
     "Made: {name}": "作成済み: {name}",
-    "The look can be set any time — it is kept when you press again.":
-        "マテリアルはいつ設定してもよい（もう一度実行しても保持される）。",
     "Check": "チェック",
     "Build the mod": "mod をビルド",
     "Material (vmat)": "マテリアル（vmat）",
@@ -42,8 +40,6 @@ JA = {
     # --- the material button ---
     "Set up the material": "マテリアルを設定",
     "Re-apply the picked images": "指定した画像を再適用",
-    "Open an image file. It is wired into the material for you.":
-        "画像ファイルを開くと、マテリアルへの接続まで自動で行う。",
     "Give the mesh a material with a Principled BSDF if it has none, and plug the "
     "images picked above into Base Color / Roughness / Normal":
         "マテリアルが無ければプリンシプル BSDF 付きで追加し、上で指定した画像を "

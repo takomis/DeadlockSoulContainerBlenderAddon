@@ -1,7 +1,7 @@
 schema_version = "1.0.0"
 
 id = "deadlock_soul_container"
-version = "0.16.3"
+version = "0.16.4"
 name = "Deadlock Soul Container"
 tagline = "Turn any mesh into a Deadlock soul container mod, in one button"
 maintainer = "このちゃん & ニコ"

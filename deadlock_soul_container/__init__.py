@@ -1129,8 +1129,6 @@ class DLSC_PT_panel(bpy.types.Panel):
             made = made_from(mesh)
         if made is not None:
             col.label(text=tr("Made: {name}", name=made.name), icon="CHECKMARK")
-            col.label(text=tr("The look can be set any time — it is kept when you press again."),
-                      icon="INFO")
 
         # 2. check it
         box = lay.box()
@@ -1174,8 +1172,6 @@ class DLSC_PT_panel(bpy.types.Panel):
                               icon="CHECKMARK" if img else "INFO")
             if mat is None:
                 box.label(text=tr("No material on this mesh — the button below adds one"), icon="INFO")
-            box.label(text=tr("Open an image file. It is wired into the material for you."),
-                      icon="INFO")
             for prop, label, img in (("tex_color", tr("Base Color"), auto[0]),
                                      ("tex_normal", tr("Normal"), auto[1]),
                                      ("tex_rough", tr("Roughness"), auto[2])):
