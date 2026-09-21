@@ -4,32 +4,18 @@ Turns a 3D model into a **Deadlock soul container mod**, from inside Blender.
 
 日本語の説明は [README.md](README.md) にあります。
 
-[What you need](#what-you-need) ・
-[Installing](#installing) ・
-[Using it](#using-it) ・
-[Mod Manager](#using-deadlock-mod-manager) ・
-[When it does not work](#when-it-does-not-work) ・
-[Limits](#what-this-add-on-does-not-do) ・
-[How it works](#how-it-works-paste-this-into-an-ai) ・
-[Support](#support)
-
 ![A soul container mod in game](images/hero.png)
 
 ---
 
 ## What you need
 
-- **Blender 4.2 or newer**
-  A version with the Extensions system
-
-- **Reduced CSDK 12**
-  Deadlock's compiler tools. Download it from the Google Drive link on [deadlockmodding.pages.dev](https://deadlockmodding.pages.dev/modding-tools/csdk-12)
-
-- **Steam (with Deadlock installed)**
-  The CSDK needs it. Keep Steam running and signed in
-
-- **Deadlock Mod Manager**
-  To put the finished mod into the game ([deadlockmods.app](https://deadlockmods.app/))
+| Requirement | Notes |
+|---|---|
+| Blender 4.2 or newer | A version with the Extensions system |
+| Reduced CSDK 12 | Deadlock's compiler tools. Download it from the Google Drive link on [deadlockmodding.pages.dev](https://deadlockmodding.pages.dev/modding-tools/csdk-12) |
+| Steam (with Deadlock installed) | The CSDK needs it. Keep Steam running and signed in |
+| Deadlock Mod Manager | To put the finished mod into the game ([deadlockmods.app](https://deadlockmods.app/)) |
 
 ---
 
@@ -143,9 +129,6 @@ What runs when you press a button, and why.
 **Paste this whole section into an AI** when you want help with a problem or a change —
 it is written to be enough context on its own. It also works as a map for reading the code.
 
-<details>
-<summary><b>Open it up</b></summary>
-
 ### [Make it a soul container]
 
 1. **Copies the selected mesh.** The copy owns its own mesh data and its own materials, so
@@ -206,8 +189,6 @@ Three fixed particles are bundled to solve this; the approach is borrowed from t
 It corrects yaw only, so crouch-walking still looks slightly off.
 
 No Valve models or textures are bundled. The size guide sphere is generated at runtime.
-
-</details>
 
 ---
 
